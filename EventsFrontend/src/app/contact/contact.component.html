@@ -1,0 +1,56 @@
+<h1>New Event</h1>
+
+<form [formGroup]="messageForm" (ngSubmit)="createEvents()">
+
+    <h5 *ngIf="success">Your form is valid!</h5>
+
+    <label>
+      Event Name:
+      <input type="text" formControlName="eventname">
+      <div *ngIf="submitted && messageForm.controls.eventname.errors" class="error">
+        <div *ngIf="messageForm.controls.eventname.errors.required">* Event Name is Required.</div>
+      </div>
+    </label>
+  
+    <label>
+      Event Type:
+      <input type="text" formControlName="eventtype">
+      <div *ngIf="submitted && messageForm.controls.eventtype.errors" class="error">
+        <div *ngIf="messageForm.controls.eventtype.errors.required">* Event Name is Required.</div>
+      </div>
+    </label>
+
+    <label>
+        Event Date:
+        <input type="date" formControlName="eventdate" >
+        <div *ngIf="submitted && messageForm.controls.eventdate.errors" class="error">
+          <div *ngIf="messageForm.controls.eventdate.errors.required">* Event Date is Required.</div>
+        </div>
+      </label>
+
+    <label>
+          Event Frequency:
+    </label>
+        <input type="radio" formControlName="eventfrequency" value="Weekly"> Weekly
+        <input type="radio" formControlName="eventfrequency" value="Monthly"> Monthly
+        <input type="radio" formControlName="eventfrequency" value="Quaterly"> Quaterly
+        <input type="radio" formControlName="eventfrequency" value="Yearly"> Yearly <br/><br/>
+    <label>
+        Amount:
+        <input type="number" formControlName="amount">
+        <div *ngIf="submitted && messageForm.controls.amount.errors" class="error">
+          <div *ngIf="messageForm.controls.amount.errors.required">* Amount is Required.</div>
+        </div>
+    </label>
+
+    <label>
+        Description:
+        <input type="text" formControlName="description">
+        <div *ngIf="submitted && messageForm.controls.description.errors" class="error">
+          <div *ngIf="messageForm.controls.description.errors.required">* Description is Required.</div>
+        </div>
+    </label>
+
+    <input type="submit" value="Submit Event" class="cta">
+  
+  </form>

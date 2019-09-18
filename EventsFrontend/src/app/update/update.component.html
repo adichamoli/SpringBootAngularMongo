@@ -1,0 +1,44 @@
+<h1>Update Event</h1>
+<form [formGroup]="editform" (ngSubmit)="updateEvents($event)">
+
+    <h5 *ngIf="success">Your form is valid!</h5>
+
+    <input type="hidden" formControlName="eventid" value={{eventId}}>
+    ID = {{eventId}}
+
+    <label>
+      Event Name:
+      <input type="text" formControlName="eventname" value={{eventName}}>
+    </label>
+  
+    <label>
+      Event Type:
+      <input type="text" formControlName="eventtype" value={{eventType}}>
+    </label>
+
+    <label>
+        Event Date:
+        <input type="date" formControlName="eventdate" value={{eventDate}}>
+      </label>
+
+    <label>
+          Event Frequency:
+    </label>
+        <input type="radio" formControlName="eventfrequency" value="Weekly"> Weekly
+        <input type="radio" formControlName="eventfrequency" value="Monthly"> Monthly
+        <input type="radio" formControlName="eventfrequency" value="Quaterly"> Quaterly
+        <input type="radio" formControlName="eventfrequency" value="Yearly"> Yearly <br/>
+
+    <label>
+        Amount:
+        <input type="number" formControlName="amount" value={{eventAmount}}>
+    </label>
+
+    <label>
+        Description:
+        <input type="text" formControlName="description" value={{eventDescription}}>
+    </label>
+
+    <input type="submit" value="Update Event" class="cta">
+  
+  </form>

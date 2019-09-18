@@ -1,0 +1,26 @@
+<br/><br/>
+<div class="w3-container">  
+    <table class="w3-table-all w3-card-4">
+      <thead *ngIf="users">
+        <tr class="w3-light-grey">
+          <th>Name</th>
+          <th>Type</th>
+          <th>Date</th>
+          <th>Frequency</th>
+          <th>Amount</th>  
+          <th>Description</th>   
+          <th width=210px></th>
+        </tr>
+      </thead>
+      <tr *ngFor="let event of users">
+        <td>{{ event.eventName}}</td>
+        <td>{{ event.eventType }}</td>
+        <td>{{ event.eventDate }} </td>
+        <td>{{ event.eventFrequency}} </td>
+        <td>{{ event.eventAmount }} </td>
+        <td>{{ event.eventDescription}} </td>
+        <td><button class="cta" (click)="updateEvent(event)"> Edit</button>
+          <button class="cta" (click)="deleteEvent(event)" style="margin-left: 20px;"> Delete</button></td>
+      </tr>
+    </table>
+  </div>
